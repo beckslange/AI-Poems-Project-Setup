@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Truculenta:opsz,wght@12..72,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
     <title>AI Poems Project/Setup</title>
   </head>
@@ -19,7 +20,7 @@
         <h1>AI Poem Generator</h1>
       </header>
       <main>
-        <form>
+        <form id="poem-generator-form">
           <input
             type="text"
             placeholder="Enter the topic of the poem"
@@ -30,7 +31,7 @@
           />
           <input type="submit" class="submit-button" />
         </form>
-        <div class="poem" id="poem">The poem <br />will go here</div>
+        <div class="poem" id="poem"></div>
       </main>
       <footer>
         This AI project coded by Rebecca Lange and is open sourced on Github and
