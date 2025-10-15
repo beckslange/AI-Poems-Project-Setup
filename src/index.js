@@ -13,7 +13,7 @@ function displayPoem(response) {
   //step 30
   clearInterval(flipInterval);
 
-  //step 12, step 13 is to add axios
+  //step 12, step 13 is to add axios into html
   new Typewriter("#poem", {
     strings: response.data.answer,
     autoStart: true,
