@@ -21,19 +21,22 @@
         <h1>AI Poem Generator</h1>
       </header>
       <main>
-        <form id="poem-generator-form">
-          <input
-            type="text"
-            placeholder="Enter the topic of the poem"
-            autofocus
-            required
-            autocomplete="off"
-            class="prompt"
-            id="user-prompt"
-          />
-          <input type="submit" class="submit-button" />
-        </form>
-        <div class="poem" id="poem"></div>
+        <div class="form-container">
+          <form id="poem-generator-form">
+            <input
+              type="text"
+              placeholder="Enter the topic of a French poem"
+              autofocus
+              required
+              autocomplete="off"
+              class="prompt"
+              id="user-prompt"
+            />
+            <input type="submit" class="submit-button" />
+          </form>
+          <div class="hint">i.e. Flower, Paris, Cheese, etc.</div>
+          <div class="poem" id="poem" class="hidden"></div>
+        </div>
       </main>
       <footer>
         This AI project coded by Rebecca Lange and is open sourced on Github and

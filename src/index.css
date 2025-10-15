@@ -20,15 +20,24 @@ h1 {
   /*line-height is font-size (fz) times 1.5, or whatever the number is*/
   color: #272044;
 }
-
-form {
-  padding: 30px;
+.form-container {
+  box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
+  margin-bottom: 30px;
+  padding: 15px 20px;
   /*padding adds spacing around the form*/
   background-color: white;
   border-radius: 10px;
+}
+.hint {
+  line-height: 1.5;
+  font-size: 12px;
+  margin-top: 5px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+form {
   display: flex;
-  box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
-  margin-bottom: 30px;
+  /*everything except display: flex was moved from form to .form-container*/
 }
 .prompt {
   padding: 16px;
@@ -52,6 +61,20 @@ form {
   border-radius: 50px;
   padding: 14px 24px;
 }
+.flip {
+  display: inline-block;
+  animation: flip 1s infinite linear;
+}
+
+@keyframes flip {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
 .poem {
   font-size: 16px;
   background: white;
@@ -59,6 +82,10 @@ form {
   line-height: 2;
   border-left: 3px solid #885df1;
   box-shadow: 0px 4px 30px rgba(39, 33, 66, 0.03);
+}
+.hidden {
+  display: none;
+  /*in order to make this work, we have to use JS poemElement*/
 }
 .poem strong {
   color: #885df1;

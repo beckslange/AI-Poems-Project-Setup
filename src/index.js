@@ -1,3 +1,5 @@
+//step 31
+let flipInterval;
 //step 11
 function displayPoem(response) {
   /*response.data.enter should have the poem in it. So the next
@@ -7,6 +9,10 @@ function displayPoem(response) {
 
   //step 15 --the problem with this is that we have not applied a prompt
   console.log("poem generated");
+
+  //step 30
+  clearInterval(flipInterval);
+
   //step 12, step 13 is to add axios
   new Typewriter("#poem", {
     strings: response.data.answer,
@@ -23,6 +29,11 @@ function generatePoem(event) {
   /*step 17 --the value of the user-prompt element is going to be the
 promptInput.value (as seen in step 18)*/
   let promptInput = document.querySelector("#user-prompt");
+  //step 25--continued from html and css for user experience
+  let poemElement = document.querySelector("#poem");
+
+  //step 26
+  poemElement.classList.remove("hidden");
 
   //step 5
   let apiKey = "tfo33b89af42954f2d60430a801e1b3c";
@@ -47,6 +58,18 @@ just as a note, you have to use `` instead of "" after step 18 */
 {context} to ${context}, and {key} to ${apiKey}
 Also, make sure to use `` and not "" on this, because it will not work otherwise */
   let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  //step 28
+  let flip = true;
+  //step 27, step 32--add span class flip, step 33--add id loading
+  poemElement.innerHTML = `<span id="loading" class = "flip">⏳</span> Generating a poem about ${promptInput.value}`;
+  //step 29
+  flipInterval = setInterval(() => {
+    poemElement.innerHTML = `${flip ? "⌛️" : "⏳"} Generating a poem about ${
+      promptInput.value
+    }`;
+    flip = !flip;
+  }, 500);
 
   //step 14 "generating poem"
   //console.log("generating poem");
